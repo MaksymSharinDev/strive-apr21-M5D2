@@ -9,12 +9,11 @@ const server = express()
 const port = 3001
 
 server.use(cors())
-server.use(express.json()) // If I don't specify this line BEFORE all the endpoints, all the request bodies are going to be undefined
+server.use(express.json())
 
-// ********** ENDPOINTS ***************
+
 
 server.use("/author", usersRouter)
-server.use("/books", booksRouter)
 
 console.table(listEndpoints(server))
 
